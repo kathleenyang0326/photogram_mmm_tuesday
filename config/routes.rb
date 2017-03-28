@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "photos#index"
   # Routes for the Friendrequest resource:
   # CREATE
   get "/friendrequests/new", :controller => "friendrequests", :action => "new"
