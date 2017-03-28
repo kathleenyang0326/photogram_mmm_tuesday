@@ -1,6 +1,7 @@
 class FriendrequestsController < ApplicationController
   def index
-    @friendrequests = Friendrequest.page(params[:page]).per(10)
+    @q = Friendrequest.ransack(params[:q])
+    @friendrequests = @q.result(:distinct => true).includes(:sender, :recipient).page(params[:page]).per(10)
 
     render("friendrequests/index.html.erb")
   end
