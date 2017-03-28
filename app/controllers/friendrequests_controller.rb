@@ -1,6 +1,6 @@
 class FriendrequestsController < ApplicationController
   def index
-    @friendrequests = Friendrequest.all
+    @friendrequests = Friendrequest.page(params[:page]).per(10)
 
     render("friendrequests/index.html.erb")
   end
