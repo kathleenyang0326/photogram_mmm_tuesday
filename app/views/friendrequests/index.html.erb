@@ -16,7 +16,7 @@
 
       <% @friendrequests.each do |friendrequest| %>
       <tr>
-        <td><%= friendrequest.sender_id %></td>
+        <td><%= friendrequest.sender.username %></td>
         <td><%= friendrequest.recipient_id %></td>
         <td>
           <a href="/friendrequests/<%= friendrequest.id %>" class="btn btn-primary">Show</a>
